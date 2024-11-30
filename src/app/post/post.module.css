@@ -1,0 +1,59 @@
+.postContainer{
+  display: grid;
+  grid-template-areas:
+  "title title"
+  "date  date"
+  "image text";
+  grid-template-columns: auto auto;
+  grid-template-rows: 3rem 2rem auto;
+  grid-gap: 10px; 
+  margin: 10px;
+}
+
+.postImage{
+  grid-area: image;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.postDate{
+  grid-area: date;
+}
+
+.postImage img{
+  object-fit: contain;
+}
+
+.postTitle{
+  font-size: 1.4rem;
+  grid-area: title;
+  display: flex;
+  align-items: center;
+}
+
+.postText{
+  grid-area: text;
+  min-height: 40vh;
+}
+
+
+@media screen and (max-width: 768px) {
+  .postContainer{
+    grid-template-areas:
+    "title"
+    "date"
+    "image"
+    "text";
+    grid-template-columns: auto;
+    grid-template-rows: 3rem 1.5rem 35vh auto;
+  }
+  
+.postImage img{
+    object-fit: cover;
+    min-height: 5rem;
+    width: 100%;
+    height: 100%;
+  }
+}
+

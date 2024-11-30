@@ -1,0 +1,47 @@
+.cardContainer{
+  display: grid;
+  grid-template-areas:
+  "image title"
+  "image excerpt";
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 2rem auto;
+  grid-gap: 10px; 
+  margin: 10px;
+}
+
+.cardImage{
+  grid-area: image;
+}
+
+.cardImage img{
+  min-height: 5rem;
+  object-fit: contain;
+}
+
+.cardTitle{
+  grid-area: title;
+  display: flex;
+  align-items: center;
+}
+
+.cardExcerpt{
+  grid-area: excerpt;
+}
+
+@media screen and (max-width: 768px) {
+  .cardContainer{
+    grid-template-areas:
+    "image"
+    "title"
+    "excerpt";
+    grid-template-columns: auto;
+    grid-template-rows: 30vh 5vh 10vh;
+  }
+  
+.cardImage img{
+    min-height: 5rem;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
